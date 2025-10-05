@@ -11,19 +11,17 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Install Dependencies
-        run: sudo apt update && sudo apt install -y cmake gcc-arm-none-eabi build-essential git
-
-      - name: Clone Pico SDK
+      - name: Install Build Tools
         run: |
-          git clone --depth 1 https://github.com/raspberrypi/pico-sdk.git
-          git submodule update --init
+          sudo apt update
+          sudo apt install -y cmake gcc-arm-none-eabi build-essential git
 
-      - name: Configure & Build
+      - name: Clone Pico SDK + TinyUSB
         run: |
+          git clone --recurse-submodules --depth 1 https://github.com/raspberrypi/pico-sdk.git
           export PICO_SDK_PATH=$PWD/pico-sdk
           mkdir build && cd build
-          cmake ..
+          cmake -DPICO_SDK_PATH=$PICO_SDK_PATH ..
           make -j$(nproc)
 
       - name: Upload Firmware
