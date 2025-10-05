@@ -17,3 +17,7 @@ Siehe `main.cpp` für Pinbelegung und Anschlussplan.
 2. Jeder Commit startet automatisch den Build.
 3. Nach Abschluss unter “Actions → Build Pico Roland Mouse → Artifacts” die `.uf2` herunterladen.
 4. Pico im BOOTSEL-Modus starten und `.uf2` kopieren.
+
+## Download
+Die fertige Datei zum upl,oad auf den raspberry pi pico gibt es hier:
+https://github.com/rigr/roland_pico_msx_mouse/actions/runs/18257065907/artifacts/4185335312
