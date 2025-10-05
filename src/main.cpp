@@ -1,7 +1,7 @@
 #include "pico/stdlib.h"
 #include "hardware/gpio.h"
 #include "tusb.h"
-#include "host/hid_host.h"   // <-- wichtig für tuh_hid_receive_report()
+#include "class/hid/hid_host.h"   // <-- wichtig für tuh_hid_receive_report()
 #include <cmath>             // <-- für roundf()
 
 // --- Roland S-750 Mausport Mapping ---
