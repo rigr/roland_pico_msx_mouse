@@ -17,7 +17,9 @@ target_compile_definitions(pico_roland_mouse PRIVATE
 
 target_include_directories(pico_roland_mouse PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}/src
+    ${PICO_SDK_PATH}/lib/tinyusb/src   # <-- neu: TinyUSB Host Header sichtbar machen
 )
+
 
 target_link_libraries(pico_roland_mouse
     pico_stdlib
