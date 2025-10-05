@@ -11,7 +11,6 @@ add_executable(pico_roland_mouse
     src/main.cpp
 )
 
-# USB Host-Unterstützung aktivieren
 target_compile_definitions(pico_roland_mouse PRIVATE
     PICO_TUSB_HOST=1
 )
